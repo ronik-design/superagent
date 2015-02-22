@@ -50,6 +50,7 @@ describe('request', function(){
         else {
           res.error.message.should.equal('cannot GET ' + uri + '/error (500)');
         }
+        assert(err, 'should have an error for 500');
         res.error.status.should.equal(500);
         done();
       });
@@ -83,6 +84,7 @@ describe('request', function(){
       request
       .get(uri + '/login')
       .end(function(err, res){
+        assert(!err, 'should not have an error for success responses');
         assert(200 == res.status);
         assert(2 == res.statusType);
         done();
