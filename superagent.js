@@ -1079,12 +1079,12 @@ Request.prototype.end = function(fn){
   };
 
   // progress
-  if (xhr.upload) {
-    xhr.upload.onprogress = function(e){
-      e.percent = e.loaded / e.total * 100;
-      self.emit('progress', e);
-    };
-  }
+  //if (xhr.upload) {
+  //  xhr.upload.onprogress = function(e){
+  //    e.percent = e.loaded / e.total * 100;
+  //    self.emit('progress', e);
+  //  };
+  //}
 
   // timeout
   if (timeout && !this._timer) {
